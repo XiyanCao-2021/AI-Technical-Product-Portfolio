@@ -113,3 +113,14 @@ th{background:#f4f6f8;color:#475467;font-size:11px;text-transform:uppercase;lett
 .project .desc{line-height:1.55}
 .bridge-step p{line-height:1.5}
 @media(max-width:560px){.identity-strip span{width:auto}}
+
+/* V15 final cleanup */
+.identity-strip{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:22px}
+.identity-strip span{display:inline-flex;align-items:center;gap:4px;padding:7px 10px;border:1px solid var(--line);background:#fff;border-radius:999px;white-space:normal}
+.identity-strip b{color:var(--navy)}
+.about-focus{margin-top:18px!important;font-size:18px!important;color:var(--ink)!important}
+.project .evidence span{white-space:normal}
+@media(max-width:560px){
+  .identity-strip{gap:6px}
+  .identity-strip span{width:auto}
+}
