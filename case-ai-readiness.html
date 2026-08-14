@@ -1,18 +1,22 @@
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Deployment Readiness Case Study | Xiyan Cao</title><link rel="stylesheet" href="style.css"></head><body><header class="top"><div class="wrap nav"><a class="brand" href="index.html">Xiyan Cao</a><nav><a href="index.html#work">Work</a><a href="index.html#strengths">Strengths</a><a href="index.html#approach">Approach</a><a class="pill" href="mailto:xiyancao257@gmail.com">Contact</a></nav></div></header><main>
 <section class="wrap casehero"><p class="eyebrow">CASE STUDY 01 • 0→1 AI PRODUCT / EVALUATION</p><h1>AI Deployment Readiness & Evaluation Platform</h1><p class="lead">A 0→1 product concept and MVP for helping product and engineering teams determine whether AI features, agents, and workflows are ready for production.</p><div class="case-meta"><span class="tag">CZ AI LLC</span><span class="tag">Founder / AI Product Manager</span><span class="tag">LLM Evaluation</span><span class="tag">Agentic Workflows</span><span class="tag">Production Readiness</span></div></section>
-<div class="wrap content"><aside class="toc"><a href="#problem">Problem</a><a href="#workflow">Decision loop</a><a href="#architecture">Architecture</a><a href="#metrics">Metrics</a><a href="#tradeoff">PM judgment</a><a href="#artifact">Scorecard</a><a href="#ownership">Ownership</a><a href="#next">Next</a></aside><article class="story">
+<div class="wrap content"><aside class="toc"><a href="#problem">Problem</a><a href="#workflow">Decision loop</a><a href="#architecture">Architecture</a><a href="#metrics">Metrics</a><a href="#tradeoff">PM judgment</a><a href="#artifact">Scorecard</a><a href="#ownership">Ownership</a><a href="#customer-engineering">Customer engineering</a><a href="#next">Next</a></aside><article class="story">
 <section id="problem">
 <h2>The product problem</h2>
 <p>AI teams can build convincing demos long before they can answer the question that matters in production: <strong>what evidence is sufficient to release this system?</strong> Aggregate accuracy alone can hide high-severity failures such as hallucinated answers, unsafe tool use, broken fallback behavior, excessive latency, or unreliable escalation.</p>
 <div class="decision"><b>Product thesis</b>Evaluation should not end in a dashboard. It should produce an actionable, risk-based deployment decision that product and engineering teams can defend.</div>
 </section>
 
-<section id="workflow">
-<h2>The deployment decision loop</h2>
-<div class="flow">
-<span>Test scenarios</span><em>→</em><span>Automated evals</span><em>→</em><span>Failure analysis</span><em>→</em><span>Remediation</span><em>→</em><span>Human review</span><em>→</em><span class="hi">GO / NO-GO</span>
+<section id="workflow"><h2>End-to-end evaluation workflow</h2>
+<p class="section-intro">A production-readiness decision should be traceable from the test scenario all the way to the release gate.</p>
+<div class="eval-diagram" aria-label="Evaluation workflow diagram">
+  <div class="eval-step"><small>01</small><strong>Test generation</strong><span>Risk-based scenarios, expected behavior, edge cases</span></div><div class="eval-arrow">→</div>
+  <div class="eval-step"><small>02</small><strong>Automated evaluation</strong><span>Quality, safety, reliability, latency & cost</span></div><div class="eval-arrow">→</div>
+  <div class="eval-step"><small>03</small><strong>Failure analysis</strong><span>Severity, root cause, failure taxonomy</span></div><div class="eval-arrow">→</div>
+  <div class="eval-step"><small>04</small><strong>Readiness scoring</strong><span>Quality gates + regression against baseline</span></div><div class="eval-arrow">→</div>
+  <div class="eval-step decision-step"><small>05</small><strong>Deployment decision</strong><span>Human review → GO / NO-GO</span></div>
 </div>
-<p>I designed the workflow so teams can move from broad evaluation scores to specific failure modes, remediation actions, and release criteria. High-severity failures can block deployment even when an overall score looks strong.</p>
+<div class="eval-feedback">Production telemetry + customer feedback → new regression scenarios → evaluation suite</div>
 </section>
 
 <section id="architecture">
@@ -88,10 +92,22 @@
 <li>Evaluation dimensions, failure taxonomy, and risk-based quality-gate strategy</li>
 <li>Product requirements for test generation, automated evaluation, failure analysis, remediation, and human review</li>
 <li>Technical boundaries across retrieval, agent/tool orchestration, evaluators, and deployment controls</li>
+<li>Customer-engineering collaboration model: translate field integration constraints and failure reports into reproducible test cases, product requirements, and core-platform improvements</li>
 <li>Success metrics spanning quality, safety, reliability, latency, cost, and operational usability</li>
 </ul>
 </section>
 
+<section id="customer-engineering"><h2>Customer engineering → core product loop</h2>
+<p>For a Forward Deployed PM, deployment is not a handoff. The highest-value work happens at the boundary between the customer's engineering environment and the core product team.</p>
+<div class="ce-loop">
+<div><b>1. Observe in the field</b><span>Integration path, data constraints, failure modes, latency and operational friction</span></div>
+<div><b>2. Debug with customer engineers</b><span>Separate configuration issues, product gaps, model behavior, and dependency failures</span></div>
+<div><b>3. Translate into product decisions</b><span>Reproducible scenarios, requirements, severity, tradeoffs, and acceptance criteria</span></div>
+<div><b>4. Feed the core platform</b><span>Turn recurring deployment needs into reusable capabilities—not one-off customizations</span></div>
+</div>
+<div class="decision"><b>My role at the boundary</b>Keep the customer outcome, technical reality, and long-term product strategy aligned: understand enough of the integration to unblock the field, then convert what we learn into a scalable product decision for engineering.</div>
+<p class="note">This section describes the operating model I would use for forward-deployed AI work; the AI Deployment Readiness case itself is independently developed MVP/product work.</p>
+</section>
 <section id="next">
 <h2>What I would build next</h2>
 <p>The next step is to make readiness profiles use-case-specific and regression-aware. Teams should be able to compare a new model, prompt, retrieval configuration, or tool version against an approved baseline and immediately understand what changed, which failures matter, and whether the system remains safe to release.</p>
