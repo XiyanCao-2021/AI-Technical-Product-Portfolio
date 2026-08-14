@@ -124,3 +124,6 @@ th{background:#f4f6f8;color:#475467;font-size:11px;text-transform:uppercase;lett
   .identity-strip{gap:6px}
   .identity-strip span{width:auto}
 }
+
+/* V16: product-value and security/governance refinements */
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.value-grid>div{padding:16px;border:1px solid var(--line);border-radius:10px;background:#fff}.value-grid b{display:block;color:var(--navy);font-size:13px;margin-bottom:6px}.value-grid span{display:block;color:var(--muted);font-size:12px;line-height:1.5}.governance-layer{margin:10px 0 12px;padding:13px 16px;border:1px solid #c7d4e8;background:#f4f7fb;border-radius:10px;text-align:center}.governance-layer b{display:block;color:var(--navy);font-size:12px;margin-bottom:4px}.governance-layer span{font-size:11px;color:#536273;font-weight:700}@media(max-width:760px){.value-grid{grid-template-columns:1fr}}

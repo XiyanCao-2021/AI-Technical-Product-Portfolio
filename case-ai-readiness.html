@@ -1,10 +1,11 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Deployment Readiness Case Study | Xiyan Cao</title><link rel="stylesheet" href="style.css"></head><body><header class="top"><div class="wrap nav"><a class="brand" href="index.html">Xiyan Cao</a><nav><a href="index.html#work">Work</a><a href="index.html#strengths">Strengths</a><a href="index.html#approach">Approach</a><a class="pill" href="mailto:xiyancao257@gmail.com">Contact</a></nav></div></header><main>
-<section class="wrap casehero"><p class="eyebrow">CASE STUDY 01 • 0→1 AI PRODUCT / EVALUATION</p><h1>AI Deployment Readiness & Evaluation Platform</h1><p class="lead">A 0→1 product concept and MVP for helping product and engineering teams determine whether AI features, agents, and workflows are ready for production.</p><div class="case-meta"><span class="tag">CZ AI LLC</span><span class="tag">Founder / AI Product Manager</span><span class="tag">LLM Evaluation</span><span class="tag">Agentic Workflows</span><span class="tag">Production Readiness</span></div></section>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Deployment Readiness Case Study | Xiyan Cao</title><link rel="stylesheet" href="style.css"></head><body><header class="top"><div class="wrap nav"><a class="brand" href="index.html">Xiyan Cao</a><nav><a href="index.html#work">Work</a><a href="index.html#approach">Approach</a><a href="index.html#depth">Technical Depth</a><a href="index.html#about">About</a><a class="pill" href="mailto:xiyancao257@gmail.com">Contact</a></nav></div></header><main>
+<section class="wrap casehero"><p class="eyebrow">CASE STUDY 01 • 0→1 AI PRODUCT / EVALUATION</p><h1>AI Deployment Readiness & Evaluation Platform</h1><p class="lead">A 0→1 product concept and MVP for helping product and engineering teams determine whether AI features, agents, and workflows are ready for production.</p><div class="case-meta"><span class="tag">CZ AI LLC</span><span class="tag">Founder & AI Product Lead</span><span class="tag">LLM Evaluation</span><span class="tag">Agentic Workflows</span><span class="tag">Production Readiness</span></div></section>
 <div class="wrap content"><aside class="toc"><a href="#problem">Problem</a><a href="#workflow">Decision loop</a><a href="#architecture">Architecture</a><a href="#metrics">Metrics</a><a href="#tradeoff">PM judgment</a><a href="#artifact">Scorecard</a><a href="#ownership">Ownership</a><a href="#customer-engineering">Customer engineering</a><a href="#next">Next</a></aside><article class="story">
 <section id="problem">
 <h2>The product problem</h2>
 <p>AI teams can build convincing demos long before they can answer the question that matters in production: <strong>what evidence is sufficient to release this system?</strong> Aggregate accuracy alone can hide high-severity failures such as hallucinated answers, unsafe tool use, broken fallback behavior, excessive latency, or unreliable escalation.</p>
 <div class="decision"><b>Product thesis</b>Evaluation should not end in a dashboard. It should produce an actionable, risk-based deployment decision that product and engineering teams can defend.</div>
+<div class="value-grid"><div><b>Why teams struggle</b><span>Release evidence is fragmented across manual tests, dashboards, engineering judgment, and one-off evaluations.</span></div><div><b>What the product changes</b><span>One repeatable workflow connects failures to severity, remediation priorities, readiness criteria, and a go/no-go decision.</span></div><div><b>Intended value</b><span>Surface high-risk failures earlier, focus engineering effort, strengthen regression decisions, and make release risk easier to explain.</span></div></div>
 </section>
 
 <section id="workflow"><h2>End-to-end evaluation workflow</h2>
@@ -51,7 +52,7 @@
     <div class="arch-box accent">Human review → Release decision</div>
   </div>
 </div>
-<div class="feedback-loop">Production telemetry & feedback → regression scenarios → evaluation suite</div>
+<div class="governance-layer"><b>Security & governance</b><span>Authentication · RBAC · Least-privilege tool access · PII protection · Auditability</span></div><div class="feedback-loop">Production telemetry & feedback → regression scenarios → evaluation suite</div>
 </section>
 
 <section id="metrics">
@@ -91,7 +92,7 @@
 <li>Product problem definition and 0→1 workflow</li>
 <li>Evaluation dimensions, failure taxonomy, and risk-based quality-gate strategy</li>
 <li>Product requirements for test generation, automated evaluation, failure analysis, remediation, and human review</li>
-<li>Technical boundaries across retrieval, agent/tool orchestration, evaluators, and deployment controls</li>
+<li>Technical boundaries across retrieval, agent/tool orchestration, evaluators, deployment controls, authentication/RBAC, least-privilege tool access, and PII protection</li>
 <li>Customer-engineering collaboration model: translate field integration constraints and failure reports into reproducible test cases, product requirements, and core-platform improvements</li>
 <li>Success metrics spanning quality, safety, reliability, latency, cost, and operational usability</li>
 </ul>
