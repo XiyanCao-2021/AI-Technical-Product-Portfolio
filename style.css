@@ -127,3 +127,29 @@ th{background:#f4f6f8;color:#475467;font-size:11px;text-transform:uppercase;lett
 
 /* V16: product-value and security/governance refinements */
 .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.value-grid>div{padding:16px;border:1px solid var(--line);border-radius:10px;background:#fff}.value-grid b{display:block;color:var(--navy);font-size:13px;margin-bottom:6px}.value-grid span{display:block;color:var(--muted);font-size:12px;line-height:1.5}.governance-layer{margin:10px 0 12px;padding:13px 16px;border:1px solid #c7d4e8;background:#f4f7fb;border-radius:10px;text-align:center}.governance-layer b{display:block;color:var(--navy);font-size:12px;margin-bottom:4px}.governance-layer span{font-size:11px;color:#536273;font-weight:700}@media(max-width:760px){.value-grid{grid-template-columns:1fr}}
+
+/* V17: Product metrics */
+.metrics-band{background:#fff;border-block:1px solid var(--line)}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.metric-card{border:1px solid var(--line);border-radius:12px;padding:20px;background:var(--bg)}
+.metric-card small{font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--blue)}
+.metric-card h3{margin:16px 0 7px;color:var(--navy);font-size:16px}
+.metric-card p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.5}
+.north-star{background:var(--navy);color:#fff;border-radius:13px;padding:22px;margin:18px 0}
+.north-star .north-label{display:block;text-transform:uppercase;letter-spacing:.1em;color:#9cbcff;font-size:10px;font-weight:800;margin-bottom:8px}
+.north-star strong{display:block;font-size:22px;line-height:1.2;margin-bottom:7px}
+.north-star p{color:#d7e0ea;margin:0;font-size:13px}
+.metric-proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+.metric-proof-grid div{background:#fff;border:1px solid var(--line);border-radius:11px;padding:16px}
+.metric-proof-grid b{display:block;color:var(--navy);font-size:22px}
+.metric-proof-grid span{display:block;color:#4d5968;font-size:12px;margin:3px 0}
+.metric-proof-grid small{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+@media(max-width:900px){.metrics-grid,.metric-proof-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.metrics-grid,.metric-proof-grid{grid-template-columns:1fr}}
+
+/* V18: AI economics */
+.economics-callout{margin-top:18px;border-left:4px solid var(--blue);background:#fff;border-radius:0 12px 12px 0;padding:18px 20px;box-shadow:0 5px 18px rgba(15,23,42,.04)}
+.economics-callout small{display:block;text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:800;color:var(--blue);margin-bottom:6px}
+.economics-callout strong{display:block;color:var(--navy);font-size:17px;margin-bottom:5px}
+.economics-callout p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.5}
+.economics-star{background:#102a43}

@@ -1,6 +1,6 @@
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Deployment Readiness Case Study | Xiyan Cao</title><link rel="stylesheet" href="style.css"></head><body><header class="top"><div class="wrap nav"><a class="brand" href="index.html">Xiyan Cao</a><nav><a href="index.html#work">Work</a><a href="index.html#approach">Approach</a><a href="index.html#depth">Technical Depth</a><a href="index.html#about">About</a><a class="pill" href="mailto:xiyancao257@gmail.com">Contact</a></nav></div></header><main>
 <section class="wrap casehero"><p class="eyebrow">CASE STUDY 01 • 0→1 AI PRODUCT / EVALUATION</p><h1>AI Deployment Readiness & Evaluation Platform</h1><p class="lead">A 0→1 product concept and MVP for helping product and engineering teams determine whether AI features, agents, and workflows are ready for production.</p><div class="case-meta"><span class="tag">CZ AI LLC</span><span class="tag">Founder & AI Product Lead</span><span class="tag">LLM Evaluation</span><span class="tag">Agentic Workflows</span><span class="tag">Production Readiness</span></div></section>
-<div class="wrap content"><aside class="toc"><a href="#problem">Problem</a><a href="#workflow">Decision loop</a><a href="#architecture">Architecture</a><a href="#metrics">Metrics</a><a href="#tradeoff">PM judgment</a><a href="#artifact">Scorecard</a><a href="#ownership">Ownership</a><a href="#customer-engineering">Customer engineering</a><a href="#next">Next</a></aside><article class="story">
+<div class="wrap content"><aside class="toc"><a href="#problem">Problem</a><a href="#workflow">Decision loop</a><a href="#architecture">Architecture</a><a href="#metrics">System metrics</a><a href="#product-metrics">Product metrics</a><a href="#economics">AI economics</a><a href="#tradeoff">PM judgment</a><a href="#artifact">Scorecard</a><a href="#ownership">Ownership</a><a href="#customer-engineering">Customer engineering</a><a href="#next">Next</a></aside><article class="story">
 <section id="problem">
 <h2>The product problem</h2>
 <p>AI teams can build convincing demos long before they can answer the question that matters in production: <strong>what evidence is sufficient to release this system?</strong> Aggregate accuracy alone can hide high-severity failures such as hallucinated answers, unsafe tool use, broken fallback behavior, excessive latency, or unreliable escalation.</p>
@@ -65,6 +65,56 @@
 <tr><td><strong>Experience</strong></td><td>Latency, escalation rate, user completion</td><td>Technically correct behavior can still create a poor product experience.</td></tr>
 <tr><td><strong>Economics</strong></td><td>Cost per successful task, token/tool usage</td><td>Quality improvements must remain economically sustainable at scale.</td></tr>
 </table>
+</section>
+
+
+<section id="product-metrics">
+<h2>Product success metrics</h2>
+<p>Because this is an early 0→1 MVP rather than a customer-deployed product, I would validate the product with a <strong>metric hierarchy</strong> instead of claiming adoption or production outcomes that do not yet exist.</p>
+
+<div class="north-star">
+  <span class="north-label">North-star metric</span>
+  <strong>Time to a confident release decision</strong>
+  <p>How quickly can a product/engineering team move from a candidate AI change to a defensible go/no-go decision with evidence?</p>
+</div>
+
+<table>
+<tr><th>Metric layer</th><th>Example metrics</th><th>Product question</th></tr>
+<tr><td><strong>Activation / value</strong></td><td>Time to first completed evaluation; % of workflows completing the full readiness flow</td><td>Can a team get to useful evidence quickly?</td></tr>
+<tr><td><strong>Decision quality</strong></td><td>Critical-failure detection rate; false-positive rate; % of failed gates with actionable root cause</td><td>Does the product identify the failures that actually matter?</td></tr>
+<tr><td><strong>Engineering efficiency</strong></td><td>Manual review hours per release; time from failure → remediation decision; regression setup time</td><td>Does evaluation reduce debugging and release-decision effort?</td></tr>
+<tr><td><strong>AI / system guardrails</strong></td><td>Task success, groundedness, safety, fallback success, P95 latency, token usage, cost per evaluation run</td><td>Is the evaluated system meeting the required quality, performance, and economics?</td></tr>
+<tr><td><strong>Security / governance</strong></td><td>Unauthorized-action findings; RBAC / least-privilege violations; PII handling failures</td><td>Can the system be trusted with enterprise access and sensitive data?</td></tr>
+<tr><td><strong>Adoption (pilot stage)</strong></td><td>Repeat evaluation runs; workflows / releases evaluated; reviewer acceptance of recommendations</td><td>Does the product become part of the team's release workflow?</td></tr>
+</table>
+
+<div class="decision"><b>PM principle</b>The north-star should measure the value of the decision, while model and system metrics act as guardrails. A better groundedness score is useful only if it helps the team ship with greater confidence, less manual effort, or lower release risk.</div>
+<p class="note">These are proposed MVP / pilot metrics. They are intentionally presented as a measurement plan, not as achieved customer results.</p>
+</section>
+
+
+<section id="economics">
+<h2>AI economics & cost model</h2>
+<p>Production readiness is not only a quality question. The product also needs to help teams understand whether an AI workflow can deliver a successful outcome at an economically sustainable cost.</p>
+
+<div class="north-star economics-star">
+  <span class="north-label">Primary unit-economics metric</span>
+  <strong>Cost per successful task</strong>
+  <p>Total model, tool/API, retrieval, infrastructure, retry, and human-review cost divided by successfully completed tasks. This prevents teams from optimizing token cost while accidentally increasing failures or manual effort.</p>
+</div>
+
+<table>
+<tr><th>Cost dimension</th><th>Metric</th><th>PM decision supported</th></tr>
+<tr><td><strong>Model usage</strong></td><td>Tokens and model cost per task / evaluation</td><td>Which model and prompt strategy provides the best quality-cost tradeoff?</td></tr>
+<tr><td><strong>Agent execution</strong></td><td>Tool calls, retries, loop depth, API cost per successful task</td><td>Are agent workflows doing unnecessary work or repeatedly recovering from failures?</td></tr>
+<tr><td><strong>Evaluation</strong></td><td>Cost per evaluation run / regression suite</td><td>How much evaluation coverage is economically justified for each release risk tier?</td></tr>
+<tr><td><strong>Human review</strong></td><td>Review rate, minutes per review, estimated review cost per task</td><td>Where should HITL remain mandatory versus be reduced through better automation?</td></tr>
+<tr><td><strong>Platform</strong></td><td>Retrieval, storage, compute, observability, and orchestration cost</td><td>Which architecture choices create sustainable operating cost as usage scales?</td></tr>
+<tr><td><strong>Outcome economics</strong></td><td>Cost per successful task; cost per confident release decision</td><td>Is the workflow economically better after accounting for quality, retries, and human effort?</td></tr>
+</table>
+
+<div class="decision"><b>Tradeoff example</b>A lower-cost model is not automatically the better choice. If it produces more failures, retries, or human reviews, its <strong>cost per successful task</strong> can be higher than a more capable model. I would optimize the end-to-end outcome, not one infrastructure line item.</div>
+<p class="note">These are proposed MVP / pilot economics metrics, not achieved customer cost savings.</p>
 </section>
 
 <section id="tradeoff">

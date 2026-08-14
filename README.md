@@ -1,15 +1,15 @@
-# Xiyan Cao Portfolio — V15 Clean Final
+# Xiyan Cao Portfolio — V18 AI Economics
 
-This version fixes the remaining copy and presentation issues from the earlier homepage:
+V18 extends V17's product-metrics story with explicit AI economics and cost tradeoffs.
 
-- Correct V14-style hero copy.
-- Cleanly separated credential chips so text does not run together.
-- Updated AI case question to: “When is an AI system actually safe and reliable enough to ship?”
-- Changed “field problem” to “customer problem.”
-- Changed customer-engineering hyphenation to natural wording.
-- Updated Technical Depth headline and added Tool integration.
-- Improved project card wording for faster executive scanning.
-- Clarified ~$20M multi-year contract and 2M+ concurrent users.
-- Preserved the Evaluation Workflow Diagram, detailed architecture, release scorecard, and Customer Engineering → Core Product loop.
+Key additions:
+- Homepage: Business Value & Economics now includes cost per successful task, human-review effort, and platform efficiency.
+- Homepage principle: optimize cost per successful outcome, not token cost in isolation.
+- AI Deployment Readiness case: dedicated AI Economics & Cost Model section.
+- Primary unit-economics metric: Cost per Successful Task.
+- Cost dimensions: model/tokens, agent tool calls/retries, evaluation runs, human review, platform infrastructure, and end-to-end outcome economics.
+- Cost per confident release decision is included as a deployment-readiness efficiency metric.
+- eMetric: infrastructure efficiency and engineering effort/platform reuse are included as decision signals without claiming unverified savings.
+- Search/AI case: AI rollout metrics now include cost per successful AI-assisted task.
 
-Upload index.html, style.css, and all three case-study HTML files to the root of the GitHub Pages repository.
+All cost metrics for the CZ AI MVP are explicitly presented as proposed MVP/pilot metrics, not achieved customer savings.

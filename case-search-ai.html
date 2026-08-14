@@ -5,6 +5,20 @@
 <section id="search"><h2>Search platform ownership</h2><ul><li>Owned Azure Cognitive Search / Azure AI Search roadmap.</li><li>Translated educator and authoring workflows into search and data-platform priorities.</li><li>Worked across relevance, indexing performance, authoring experience, APIs, and platform scalability.</li></ul><div class="decision"><b>Product lens</b>Treat performance as part of the product experience—not only an infrastructure metric. Relevance is less valuable if users wait too long, and low latency is not enough if results do not support the workflow.</div></section>
 <section id="ai"><h2>Applied AI initiatives</h2><p>Led initiatives spanning AI-assisted clustering/scoring workflows and an NLP-based writing assistant. My product responsibilities included user workflows, API integrations, evaluation criteria, content-safety considerations, human review, and rollout planning.</p><p>The key PM question was not “Where can we add AI?” but “Where does AI materially improve the workflow, and what quality and fallback behavior are required before users should rely on it?”</p></section>
 <section id="framework"><h2>Decision framework</h2><table><tr><th>Dimension</th><th>Question</th></tr><tr><td>User value</td><td>Does this materially improve the educator / authoring workflow?</td></tr><tr><td>Quality</td><td>What relevance, accuracy, or false-positive threshold is acceptable?</td></tr><tr><td>Platform</td><td>How do latency, indexing, APIs, reliability, and scale affect the experience?</td></tr><tr><td>Safety / review</td><td>What requires human review, fallback, or content controls?</td></tr><tr><td>Rollout</td><td>How should we validate quality and operational behavior before broader adoption?</td></tr></table></section>
+
+<section id="metrics">
+<h2>Product metric hierarchy</h2>
+<table>
+<tr><th>Layer</th><th>Example metric</th><th>Why it matters</th></tr>
+<tr><td>User outcome</td><td>Search task completion / successful content discovery</td><td>Measures whether users actually find what they need.</td></tr>
+<tr><td>Quality</td><td>Relevance, zero-result / poor-result patterns, false positives</td><td>Connects retrieval behavior to workflow usefulness.</td></tr>
+<tr><td>Performance</td><td>P95 latency, indexing time / freshness</td><td>Protects responsiveness and content availability.</td></tr>
+<tr><td>Platform</td><td>API reliability, throughput, production errors</td><td>Ensures the experience holds at enterprise scale.</td></tr>
+<tr><td>AI rollout</td><td>Evaluation pass rate, human-review rate, fallback rate, cost per successful AI-assisted task</td><td>Creates an explicit quality and economics bar before broader use.</td></tr>
+</table>
+<div class="decision"><b>Measured outcome</b>Search latency was reduced by <strong>25%</strong>; the broader metric model connects platform performance to user workflow quality rather than optimizing latency in isolation.</div>
+</section>
+
 <section id="result"><h2>Selected outcome</h2><div class="results"><div class="result"><b>25%</b><span>Reduction in search latency</span></div><div class="result"><b>Platform</b><span>Roadmap connected relevance, indexing, APIs, and authoring workflows</span></div><div class="result"><b>AI</b><span>Evaluation and rollout requirements defined for applied-AI workflows</span></div></div></section>
 <section id="learn"><h2>What I learned</h2><div class="callout"><strong>Technical metrics need a user story.</strong>Latency, relevance, accuracy, and false positives become useful product metrics only when connected to a real workflow and an explicit quality bar. That connection is what lets a PM make tradeoffs with engineering instead of optimizing isolated numbers.</div><p class="note">This case study summarizes product work at a high level and omits confidential customer and proprietary implementation details.</p></section>
 </article></div></main><footer><div class="wrap"><span>© 2026 Xiyan Cao</span><span>Selected work presented at a high level; confidential customer and proprietary implementation details omitted.</span></div></footer></body></html>
