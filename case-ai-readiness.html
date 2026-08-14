@@ -1,6 +1,15 @@
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Deployment Readiness Case Study | Xiyan Cao</title><link rel="stylesheet" href="style.css"></head><body><header class="top"><div class="wrap nav"><a class="brand" href="index.html">Xiyan Cao</a><nav><a href="index.html#work">Work</a><a href="index.html#approach">Approach</a><a href="index.html#depth">Technical Depth</a><a href="index.html#about">About</a><a class="pill" href="mailto:xiyancao257@gmail.com">Contact</a></nav></div></header><main>
 <section class="wrap casehero"><p class="eyebrow">CASE STUDY 01 • 0→1 AI PRODUCT / EVALUATION</p><h1>AI Deployment Readiness & Evaluation Platform</h1><p class="lead">A 0→1 product concept and MVP for helping product and engineering teams determine whether AI features, agents, and workflows are ready for production.</p><div class="case-meta"><span class="tag">CZ AI LLC</span><span class="tag">Founder & AI Product Lead</span><span class="tag">LLM Evaluation</span><span class="tag">Agentic Workflows</span><span class="tag">Production Readiness</span></div></section>
-<div class="wrap content"><aside class="toc"><a href="#problem">Problem</a><a href="#workflow">Decision loop</a><a href="#architecture">Architecture</a><a href="#metrics">System metrics</a><a href="#product-metrics">Product metrics</a><a href="#economics">AI economics</a><a href="#tradeoff">PM judgment</a><a href="#artifact">Scorecard</a><a href="#ownership">Ownership</a><a href="#customer-engineering">Customer engineering</a><a href="#next">Next</a></aside><article class="story">
+<div class="wrap content"><aside class="toc"><a href="#problem">Problem</a><a href="#workflow">Decision loop</a><a href="#architecture">Architecture</a><a href="#metrics">System metrics</a><a href="#product-story">Product story</a><a href="#product-metrics">Product metrics</a><a href="#economics">AI economics</a><a href="#tradeoff">PM judgment</a><a href="#artifact">Scorecard</a><a href="#ownership">Ownership</a><a href="#customer-engineering">Customer engineering</a><a href="#next">Next</a></aside><article class="story">
+
+<div class="product-thesis">
+  <small>PRODUCT THESIS</small>
+  <strong>Is this AI system ready to ship? If not, why not—and what should engineering fix first?</strong>
+  <p>The product turns ambiguous AI quality and release risk into measurable readiness criteria, actionable failure diagnosis, prioritized remediation, and an evidence-based human go/no-go decision.</p>
+</div>
+<div class="prototype-note"><b>Stage:</b> Independently developed 0→1 MVP / prototype. Product metrics, economics targets, and enterprise controls shown here are the measurement and design framework I would validate through pilots; they are not presented as achieved customer outcomes.</div>
+
+
 <section id="problem">
 <h2>The product problem</h2>
 <p>AI teams can build convincing demos long before they can answer the question that matters in production: <strong>what evidence is sufficient to release this system?</strong> Aggregate accuracy alone can hide high-severity failures such as hallucinated answers, unsafe tool use, broken fallback behavior, excessive latency, or unreliable escalation.</p>
@@ -67,6 +76,18 @@
 </table>
 </section>
 
+
+
+<section id="product-story">
+<h2>From AI risk to a product decision</h2>
+<div class="story-grid">
+  <div><span>01</span><b>Product problem</b><p>AI teams can measure individual model behaviors yet still struggle to decide whether the overall workflow is ready to release.</p></div>
+  <div><span>02</span><b>Workflow</b><p>Test generation → automated evaluation → failure diagnosis → remediation → readiness scoring → human go/no-go.</p></div>
+  <div><span>03</span><b>Metrics & economics</b><p>Task success, groundedness, safety, regression risk, latency, cost per successful task, and cost per confident release decision.</p></div>
+  <div><span>04</span><b>Security & governance</b><p>Authentication, RBAC, least-privilege tool access, PII protection, auditability, and human approval for high-risk actions.</p></div>
+  <div><span>05</span><b>Technical prototype</b><p>Python, OpenAI APIs, LangGraph/LangChain, RAG, tool calling, stateful orchestration, fallbacks, HITL, and MCP-based integration exploration.</p></div>
+</div>
+</section>
 
 <section id="product-metrics">
 <h2>Product success metrics</h2>
